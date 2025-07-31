@@ -1,0 +1,17 @@
+/* ---------- description.txt ---------- */
+This project is a simple demonstration of using CUDA to accelerate image processing. A CUDA kernel inverts the color of each pixel in a color image (R, G, B values transformed to 255 - value).
+
+### Key Features:
+- Pixel-wise GPU parallelism using CUDA
+- OpenCV integration for image loading/saving
+- Easy-to-run Makefile and CLI interface
+
+### Lessons Learned:
+- Working with OpenCV in C++
+- Mapping image memory to GPU device pointers
+- Launching CUDA kernels and transferring data between host and device
+
+### Future Work:
+- Add support for grayscale
+- Add other filters (blur, sharpen, etc.)
+- Benchmark performance vs CPU-only version
