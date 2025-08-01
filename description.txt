@@ -1,17 +1,43 @@
-/* ---------- description.txt ---------- */
-This project is a simple demonstration of using CUDA to accelerate image processing. A CUDA kernel inverts the color of each pixel in a color image (R, G, B values transformed to 255 - value).
+GPU-Based Image Color Inversion using CuPy in Google Colab
 
-### Key Features:
-- Pixel-wise GPU parallelism using CUDA
-- OpenCV integration for image loading/saving
-- Easy-to-run Makefile and CLI interface
+This project is a part of the GPU Specialization Capstone and demonstrates the use of CuPy for GPU-accelerated image processing. The main task involves performing a pixel-wise color inversion on an RGB image using GPU computation. The project is implemented in a Google Colab notebook, leveraging CuPy for CUDA-based operations and OpenCV for image I/O.
 
-### Lessons Learned:
-- Working with OpenCV in C++
-- Mapping image memory to GPU device pointers
-- Launching CUDA kernels and transferring data between host and device
+What the project does:
+- Accepts user-uploaded images.
+- Loads and converts the image to RGB format.
+- Transfers the image data to the GPU using CuPy.
+- Performs a parallel per-pixel inversion on the GPU: new_pixel = 255 - original_pixel.
+- Retrieves the result from GPU memory and displays the output.
+- Saves the final inverted image and makes it available for download.
 
-### Future Work:
-- Add support for grayscale
-- Add other filters (blur, sharpen, etc.)
-- Benchmark performance vs CPU-only version
+Technologies used:
+- CuPy: For performing GPU operations with NumPy-like syntax.
+- OpenCV: For reading and writing image files.
+- Matplotlib: For visualization.
+- Google Colab: For running the project in a cloud environment with GPU access.
+
+Why this qualifies as GPU-based work:
+This project performs its core processing—color inversion—entirely on the GPU. By using CuPy, the code avoids CPU-bound loops and relies on GPU-based broadcasting and memory operations. Since CuPy uses CUDA under the hood, the project satisfies the requirements for CUDA/GPU-based coursework. While no custom CUDA kernel is written, the workload runs entirely on CUDA-enabled hardware.
+
+Challenges faced:
+- Ensuring Colab's GPU runtime was enabled.
+- Converting between OpenCV BGR and RGB formats.
+- Managing data transfer between host (CPU) and device (GPU) memory.
+
+Lessons learned:
+- CuPy can be a powerful alternative to raw CUDA code when working with array-based data.
+- Cloud environments like Colab make GPU computing accessible and reproducible.
+- Simple image operations can demonstrate the performance and scalability of GPU parallelism.
+
+Future work:
+- Extend the notebook to include other image filters like grayscale conversion, Gaussian blur, or sharpening.
+- Compare performance between CPU (NumPy) and GPU (CuPy) implementations.
+- Package the project as a GPU-powered web service using Flask and a backend GPU server.
+
+Deliverables:
+- `gpu_project.ipynb`: The working Google Colab notebook.
+- `README.md`: Project documentation and instructions.
+- `description.txt`: Assignment summary.
+- `inverted_output.jpg`: Example of GPU-processed output image.
+- GitHub repository: https://github.com/A20496/CUDA-atScale-Independent-Project
+- Colab notebook link: https://colab.research.google.com/drive/1U489gEOqzB9Nbx9O4QnL9XM7yFDckrjQ?usp=sharing
