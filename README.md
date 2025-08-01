@@ -70,7 +70,7 @@ Using CuPy avoids the need to write low-level CUDA kernel code while still enabl
 
 A 5–10 minute demonstration video explaining the notebook implementation, output, and lessons learned can be included here.
 
-_Link to be added once the video is available._
+https://drive.google.com/drive/folders/1njGvbUFvBuFz6arwUyh8n1pLn-37beqC?usp=sharing
 
 ## GitHub Repository
 
